@@ -1,10 +1,10 @@
 class FilingParserController < ApplicationController
     def index
-        file = File.join(Rails.root, 'app', 'example1.xml')
+        file = File.join(Rails.root, 'app', 'example2.xml')
         doc = File.open(file) { |f| Nokogiri::XML(f) }
     
         filer = parse__and_create_filer(doc)
-        debugger
+        
         awards = parse_and_create_awards(filer.id, doc)
         render json: {filer: filer, awards: awards.to_json(include: :receiver)}
     end
@@ -13,11 +13,36 @@ class FilingParserController < ApplicationController
 
     def parse__and_create_filer(xml_doc)
         parsed_ein = xml_doc.at('Return/ReturnHeader/Filer/EIN').text
-        parsed_name = xml_doc.at('Return/ReturnHeader/Filer/Name/BusinessNameLine1').text
-        parsed_address = xml_doc.at('Return/ReturnHeader/Filer/USAddress/AddressLine1').text
-        parsed_city = xml_doc.at('Return/ReturnHeader/Filer/USAddress/City').text
-        parsed_state = xml_doc.at('Return/ReturnHeader/Filer/USAddress/State').text
-        parsed_zip = xml_doc.at('Return/ReturnHeader/Filer/USAddress/ZIPCode').text
+
+        if xml_doc.at('Return/ReturnHeader/Filer/Name').nil?
+            parsed_name = xml_doc.at('Return/ReturnHeader/Filer/BusinessName/BusinessNameLine1Txt').text
+        else
+            parsed_name = xml_doc.at('Return/ReturnHeader/Filer/Name/BusinessNameLine1').text
+        end
+        
+        if xml_doc.at('Return/ReturnHeader/Filer/USAddress/AddressLine1').nil?
+            parsed_address = xml_doc.at('Return/ReturnHeader/Filer/USAddress/AddressLine1Txt').text
+        else
+            parsed_address = xml_doc.at('Return/ReturnHeader/Filer/USAddress/AddressLine1').text
+        end
+
+        if xml_doc.at('Return/ReturnHeader/Filer/USAddress/City').nil?
+            parsed_city = xml_doc.at('Return/ReturnHeader/Filer/USAddress/CityNm').text
+        else
+            parsed_city = xml_doc.at('Return/ReturnHeader/Filer/USAddress/City').text
+        end
+
+        if xml_doc.at('Return/ReturnHeader/Filer/USAddress/State').nil?
+            parsed_state = xml_doc.at('Return/ReturnHeader/Filer/USAddress/StateAbbreviationCd').text
+        else
+            parsed_state = xml_doc.at('Return/ReturnHeader/Filer/USAddress/State').text
+        end
+
+        if xml_doc.at('Return/ReturnHeader/Filer/USAddress/ZIPCode').nil?
+            parsed_zip = xml_doc.at('Return/ReturnHeader/Filer/USAddress/ZIPCd').text
+        else
+            parsed_zip = xml_doc.at('Return/ReturnHeader/Filer/USAddress/ZIPCode').text
+        end
 
         filer = Filer.find_or_create_by( ein: parsed_ein) do |filer|
             filer.name = parsed_name
@@ -35,8 +60,23 @@ class FilingParserController < ApplicationController
         for recipient_award_element in xml_doc.at('Return/ReturnData/IRS990ScheduleI').element_children do
             #skipping the RecordsMaintained element, and any others that don't have more data
             if recipient_award_element.element_children.length > 0
-                parsed_grant_purpose = recipient_award_element.element_children.at('PurposeOfGrant')&.text
-                parsed_cash_amount = recipient_award_element.element_children.at('AmountOfCashGrant')&.text
+                if recipient_award_element.element_children.at('PurposeOfGrant').nil?
+                    if recipient_award_element.element_children.at('PurposeOfGrantTxt').nil?
+                        #depends on shape of other files whether we can skip these or need better parsing
+                        puts recipient_award_element.element_children
+                        next
+                    end
+                    parsed_grant_purpose = recipient_award_element.element_children.at('PurposeOfGrantTxt').text
+                else
+                    parsed_grant_purpose = recipient_award_element.element_children.at('PurposeOfGrant').text
+                end
+                
+                if recipient_award_element.element_children.at('AmountOfCashGrant').nil?
+                    parsed_cash_amount = recipient_award_element.element_children.at('CashGrantAmt').text
+                else
+                    parsed_cash_amount = recipient_award_element.element_children.at('AmountOfCashGrant').text
+                end
+                
                 if parsed_grant_purpose.nil? || parsed_cash_amount.nil?
                     next
                 end
@@ -44,12 +84,42 @@ class FilingParserController < ApplicationController
                     purpose: parsed_grant_purpose, 
                     cash_amount: parsed_cash_amount)
 
-                parsed_recipient_ein = recipient_award_element.element_children.at('EINOfRecipient')&.text
-                parsed_recipient_name = recipient_award_element.element_children.at('RecipientNameBusiness/BusinessNameLine1').text
-                parsed_recipient_address = recipient_award_element.element_children.at('AddressUS/AddressLine1').text
-                parsed_recipient_city = recipient_award_element.element_children.at('AddressUS/City').text
-                parsed_recipient_state = recipient_award_element.element_children.at('AddressUS/State').text
-                parsed_recipient_zip = recipient_award_element.element_children.at('AddressUS/ZIPCode').text
+                if recipient_award_element.element_children.at('EINOfRecipient').nil?
+                    #EINs can be missing (thanks, city of pasedena public library)
+                    parsed_recipient_ein = recipient_award_element.element_children.at('RecipientEIN')&.text
+                else
+                    parsed_recipient_ein = recipient_award_element.element_children.at('EINOfRecipient').text
+                end
+
+                if recipient_award_element.element_children.at('RecipientNameBusiness/BusinessNameLine1').nil?
+                    parsed_name = xml_doc.at('RecipientBusinessName/BusinessNameLine1Txt').text
+                else
+                    parsed_recipient_name = recipient_award_element.element_children.at('RecipientNameBusiness/BusinessNameLine1').text
+                end
+
+                if recipient_award_element.element_children.at('AddressUS/AddressLine1').nil?
+                    parsed_recipient_address = recipient_award_element.element_children.at('USAddress/AddressLine1Txt').text
+                else
+                    parsed_recipient_address = recipient_award_element.element_children.at('AddressUS/AddressLine1').text
+                end
+
+                if recipient_award_element.element_children.at('AddressUS/City').nil?
+                    parsed_recipient_city = recipient_award_element.element_children.at('USAddress/CityNm').text
+                else
+                    parsed_recipient_city = recipient_award_element.element_children.at('AddressUS/City').text
+                end
+
+                if recipient_award_element.element_children.at('AddressUS/State').nil?
+                    parsed_recipient_state = recipient_award_element.element_children.at('USAddress/StateAbbreviationCd').text
+                else
+                    parsed_recipient_state = recipient_award_element.element_children.at('AddressUS/State').text
+                end
+
+                if recipient_award_element.element_children.at('AddressUS/ZIPCode').nil?
+                    parsed_recipient_zip = recipient_award_element.element_children.at('USAddress/ZIPCd').text
+                else
+                    parsed_recipient_zip = recipient_award_element.element_children.at('AddressUS/ZIPCode').text
+                end
 
                 receiver = Receiver.new(ein: parsed_recipient_ein, 
                     name: parsed_recipient_name, 
@@ -65,11 +135,16 @@ class FilingParserController < ApplicationController
                     state: parsed_recipient_state, 
                     zip: parsed_recipient_zip)
                 
+                #TODO: slow, let's figure out saving in bulk
                 award.save
                 awards << award
             end
         end
         
         return awards
+    end
+
+    def retrieve_xml_element_by_synonyms(xml_doc, list_of_element_synonyms)
+        #TODO: maybe clean up this way?
     end
 end
