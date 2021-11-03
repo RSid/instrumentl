@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_163119) do
+ActiveRecord::Schema.define(version: 2021_11_03_170804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_163119) do
     t.integer "zip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["ein"], name: "index_filers_on_ein", unique: true
   end
 
   create_table "receivers", force: :cascade do |t|
