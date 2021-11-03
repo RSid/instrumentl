@@ -30,12 +30,31 @@ class FilingParserController < ApplicationController
     def parse_award(xml_doc)
         recipients = xml_doc.at('Return/ReturnData/IRS990ScheduleI/RecipientTable')
         #xml_doc.at('Return/ReturnData/IRS990ScheduleI').element_children[5].element_children[0].at('BusinessNameLine1').text
-        debugger
+        #xml_doc.at('Return/ReturnData/IRS990ScheduleI').element_children[5].element_children.select{ |el| el.element_children if el.element_children.length > 0 }
+        awards = []
+        for recipient_award_element in xml_doc.at('Return/ReturnData/IRS990ScheduleI').element_children do
+            if recipient_award_element.element_children.length > 0
+                parsed_grant_purpose = recipient_award_element.element_children.at('PurposeOfGrant')&.text
+                parsed_cash_amount = recipient_award_element.element_children.at('AmountOfCashGrant')&.text
+                if parsed_grant_purpose.nil? || parsed_cash_amount.nil?
+                    next
+                end
+                award = Award.new(purpose: parsed_grant_purpose, cash_amount: parsed_cash_amount)
+                awards << award
+
+                parsed_recipient_name = recipient_award_element.element_children.at('RecipientNameBusiness/BusinessNameLine1').text
+                parsed_recipient_address = recipient_award_element.element_children.at('AddressUS/AddressLine1').text
+                parsed_recipient_city = recipient_award_element.element_children.at('AddressUS/City').text
+                parsed_recipient_state = recipient_award_element.element_children.at('AddressUS/State').text
+                parsed_recipient_zip = recipient_award_element.element_children.at('AddressUS/ZIPCode').text
+            end
+        end
+        
         parsed_recipient_name = xml_doc.at('Return/ReturnData/IRS990ScheduleI/RecipientTable/RecipientNameBusiness/BusinessNameLine1').text
 
-        parsed_purpose = xml_doc.at('Return/ReturnData/IRS990ScheduleI/RecipientTable/PurposeOfGrant').text
-        parsed_cash_amount = xml_doc.at('Return/ReturnData/IRS990ScheduleI/RecipientTable/AmountOfCashGrant').text
-        award = Award.new(purpose: parsed_purpose, cash_amount: parsed_cash_amount)
-        return award
+        #parsed_purpose = xml_doc.at('Return/ReturnData/IRS990ScheduleI/RecipientTable/PurposeOfGrant').text
+        #parsed_cash_amount = xml_doc.at('Return/ReturnData/IRS990ScheduleI/RecipientTable/AmountOfCashGrant').text
+        
+        return awards
     end
 end
