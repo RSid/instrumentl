@@ -1,0 +1,558 @@
+<Return xmlns="http://www.irs.gov/efile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" returnVersion="2014v5.0" xsi:schemaLocation="http://www.irs.gov/efile">
+<ReturnHeader binaryAttachmentCnt="0">
+<ReturnTs>2015-07-31T11:06:52-07:00</ReturnTs>
+<TaxPeriodEndDt>2014-12-31</TaxPeriodEndDt>
+<PreparerFirmGrp>
+<PreparerFirmName>
+<BusinessNameLine1Txt>Rogers Wood Hill Starman & Gustason PA</BusinessNameLine1Txt>
+</PreparerFirmName>
+<PreparerUSAddress>
+<AddressLine1Txt>606 Bald Eagle Drive Suite 400</AddressLine1Txt>
+<CityNm>Marco Island</CityNm>
+<StateAbbreviationCd>FL</StateAbbreviationCd>
+<ZIPCd>341452766</ZIPCd>
+</PreparerUSAddress>
+</PreparerFirmGrp>
+<ReturnTypeCd>990PF</ReturnTypeCd>
+<TaxPeriodBeginDt>2014-01-01</TaxPeriodBeginDt>
+<Filer>
+<EIN>742805201</EIN>
+<BusinessName>
+<BusinessNameLine1Txt>The H Alan and Karen K Bell Family</BusinessNameLine1Txt>
+<BusinessNameLine2Txt>Foundation</BusinessNameLine2Txt>
+</BusinessName>
+<BusinessNameControlTxt>HALA</BusinessNameControlTxt>
+<USAddress>
+<AddressLine1Txt>3015 Cherry Hill Road</AddressLine1Txt>
+<CityNm>Manhattan</CityNm>
+<StateAbbreviationCd>KS</StateAbbreviationCd>
+<ZIPCd>66503</ZIPCd>
+</USAddress>
+</Filer>
+<BusinessOfficerGrp>
+<PersonNm>H Alan Bell</PersonNm>
+<PersonTitleTxt>President</PersonTitleTxt>
+<SignatureDt>2015-07-17</SignatureDt>
+<DiscussWithPaidPreparerInd>true</DiscussWithPaidPreparerInd>
+</BusinessOfficerGrp>
+<PreparerPersonGrp>
+<PreparerPersonNm>Scot A Shepard CPA</PreparerPersonNm>
+<PTIN>P00103309</PTIN>
+<PhoneNum>2393947502</PhoneNum>
+</PreparerPersonGrp>
+<TaxYr>2014</TaxYr>
+<BuildTS>2016-02-25 16:41:14Z</BuildTS>
+</ReturnHeader>
+<ReturnData documentCnt="6">
+<IRS990PF documentId="IRS990PF" referenceDocumentId="GeneralExplanation 8453SignatureDocument.1" softwareId="14000265" softwareVersionNum="2014v5.0">
+<Organization501c3ExemptPFInd>X</Organization501c3ExemptPFInd>
+<FMVAssetsEOYAmt>234492</FMVAssetsEOYAmt>
+<MethodOfAccountingCashInd>X</MethodOfAccountingCashInd>
+<AnalysisOfRevenueAndExpenses>
+<ScheduleBNotRequiredInd>X</ScheduleBNotRequiredInd>
+<InterestOnSavRevAndExpnssAmt>2</InterestOnSavRevAndExpnssAmt>
+<InterestOnSavNetInvstIncmAmt>2</InterestOnSavNetInvstIncmAmt>
+<InterestOnSavingsAdjNetIncmAmt>2</InterestOnSavingsAdjNetIncmAmt>
+<DividendsRevAndExpnssAmt>4677</DividendsRevAndExpnssAmt>
+<DividendsNetInvstIncmAmt>4677</DividendsNetInvstIncmAmt>
+<DividendsAdjNetIncmAmt>4677</DividendsAdjNetIncmAmt>
+<NetGainSaleAstRevAndExpnssAmt>15062</NetGainSaleAstRevAndExpnssAmt>
+<GrossSalesPriceAmt>216406</GrossSalesPriceAmt>
+<CapGainNetIncmNetInvstIncmAmt>15062</CapGainNetIncmNetInvstIncmAmt>
+<NetSTCapitalGainAdjNetIncmAmt>2026</NetSTCapitalGainAdjNetIncmAmt>
+<TotalRevAndExpnssAmt>19741</TotalRevAndExpnssAmt>
+<TotalNetInvstIncmAmt>19741</TotalNetInvstIncmAmt>
+<TotalAdjNetIncmAmt>6705</TotalAdjNetIncmAmt>
+<AccountingFeesRevAndExpnssAmt referenceDocumentId="AccountingFeesSchedule">450</AccountingFeesRevAndExpnssAmt>
+<AccountingFeesNetInvstIncmAmt>450</AccountingFeesNetInvstIncmAmt>
+<OtherProfFeesRevAndExpnssAmt referenceDocumentId="OtherProfessionalFeesSchedule">1939</OtherProfFeesRevAndExpnssAmt>
+<OtherProfFeesNetInvstIncmAmt>1939</OtherProfFeesNetInvstIncmAmt>
+<TaxesRevAndExpnssAmt referenceDocumentId="TaxesSchedule">553</TaxesRevAndExpnssAmt>
+<TaxesNetInvstIncmAmt>112</TaxesNetInvstIncmAmt>
+<TaxesAdjNetIncmAmt>441</TaxesAdjNetIncmAmt>
+<TotOprExpensesRevAndExpnssAmt>2942</TotOprExpensesRevAndExpnssAmt>
+<TotOprExpensesNetInvstIncmAmt>2501</TotOprExpensesNetInvstIncmAmt>
+<TotOprExpensesAdjNetIncmAmt>441</TotOprExpensesAdjNetIncmAmt>
+<TotOprExpensesDsbrsChrtblAmt>0</TotOprExpensesDsbrsChrtblAmt>
+<ContriPaidRevAndExpnssAmt>11525</ContriPaidRevAndExpnssAmt>
+<ContriPaidDsbrsChrtblAmt>11525</ContriPaidDsbrsChrtblAmt>
+<TotalExpensesRevAndExpnssAmt>14467</TotalExpensesRevAndExpnssAmt>
+<TotalExpensesNetInvstIncmAmt>2501</TotalExpensesNetInvstIncmAmt>
+<TotalExpensesAdjNetIncmAmt>441</TotalExpensesAdjNetIncmAmt>
+<TotalExpensesDsbrsChrtblAmt>11525</TotalExpensesDsbrsChrtblAmt>
+<ExcessRevenueOverExpensesAmt>5274</ExcessRevenueOverExpensesAmt>
+<NetInvestmentIncomeAmt>17240</NetInvestmentIncomeAmt>
+<AdjustedNetIncomeAmt>6264</AdjustedNetIncomeAmt>
+</AnalysisOfRevenueAndExpenses>
+<Form990PFBalanceSheetsGrp>
+<CashBOYAmt>613</CashBOYAmt>
+<CashEOYAmt>658</CashEOYAmt>
+<CashEOYFMVAmt>658</CashEOYFMVAmt>
+<SavAndTempCashInvstBOYAmt>3624</SavAndTempCashInvstBOYAmt>
+<SavAndTempCashInvstEOYAmt>28087</SavAndTempCashInvstEOYAmt>
+<SavAndTempCashInvstEOYFMVAmt>28087</SavAndTempCashInvstEOYFMVAmt>
+<CorporateStockBOYAmt>173802</CorporateStockBOYAmt>
+<CorporateStockEOYAmt referenceDocumentId="InvestmentsCorpStockSchedule">154814</CorporateStockEOYAmt>
+<CorporateStockEOYFMVAmt>205747</CorporateStockEOYFMVAmt>
+<TotalAssetsBOYAmt>178039</TotalAssetsBOYAmt>
+<TotalAssetsEOYAmt>183559</TotalAssetsEOYAmt>
+<TotalAssetsEOYFMVAmt>234492</TotalAssetsEOYFMVAmt>
+<TotalLiabilitiesEOYAmt>0</TotalLiabilitiesEOYAmt>
+<OrgDoesNotFollowSFAS117Ind>X</OrgDoesNotFollowSFAS117Ind>
+<RetainedEarningBOYAmt>178039</RetainedEarningBOYAmt>
+<RetainedEarningEOYAmt>183559</RetainedEarningEOYAmt>
+<TotNetAstOrFundBalancesBOYAmt>178039</TotNetAstOrFundBalancesBOYAmt>
+<TotNetAstOrFundBalancesEOYAmt>183559</TotNetAstOrFundBalancesEOYAmt>
+<TotalLiabilitiesNetAstBOYAmt>178039</TotalLiabilitiesNetAstBOYAmt>
+<TotalLiabilitiesNetAstEOYAmt>183559</TotalLiabilitiesNetAstEOYAmt>
+</Form990PFBalanceSheetsGrp>
+<ChgInNetAssetsFundBalancesGrp>
+<TotNetAstOrFundBalancesBOYAmt>178039</TotNetAstOrFundBalancesBOYAmt>
+<ExcessRevenueOverExpensesAmt>5274</ExcessRevenueOverExpensesAmt>
+<OtherIncreasesAmt referenceDocumentId="OtherIncreasesSchedule">246</OtherIncreasesAmt>
+<SubtotalAmt>183559</SubtotalAmt>
+<TotNetAstOrFundBalancesEOYAmt>183559</TotNetAstOrFundBalancesEOYAmt>
+</ChgInNetAssetsFundBalancesGrp>
+<CapGainsLossTxInvstIncmDetail>
+<CapGainsLossTxInvstIncmGrp>
+<PropertyDesc>Capital Gain Dividends</PropertyDesc>
+</CapGainsLossTxInvstIncmGrp>
+<CapGainsLossTxInvstIncmGrp>
+<GainOrLossAmt>13</GainOrLossAmt>
+</CapGainsLossTxInvstIncmGrp>
+<CapitalGainNetIncomeAmt>15062</CapitalGainNetIncomeAmt>
+<NetShortTermCapitalGainLossAmt>2026</NetShortTermCapitalGainLossAmt>
+</CapGainsLossTxInvstIncmDetail>
+<QlfyUndSect4940eReducedTaxGrp>
+<LiableSection4942TaxInd>false</LiableSection4942TaxInd>
+<AdjustedQlfyDistriYr1Amt>9365</AdjustedQlfyDistriYr1Amt>
+<NetVlNoncharitableAssetsYr1Amt>202212</NetVlNoncharitableAssetsYr1Amt>
+<DistributionYr1Rt>0.04631</DistributionYr1Rt>
+<AdjustedQlfyDistriYr2Amt>9290</AdjustedQlfyDistriYr2Amt>
+<NetVlNoncharitableAssetsYr2Amt>180032</NetVlNoncharitableAssetsYr2Amt>
+<DistributionYr2Rt>0.05160</DistributionYr2Rt>
+<AdjustedQlfyDistriYr3Amt>12085</AdjustedQlfyDistriYr3Amt>
+<NetVlNoncharitableAssetsYr3Amt>170000</NetVlNoncharitableAssetsYr3Amt>
+<DistributionYr3Rt>0.07109</DistributionYr3Rt>
+<AdjustedQlfyDistriYr4Amt>8500</AdjustedQlfyDistriYr4Amt>
+<NetVlNoncharitableAssetsYr4Amt>170000</NetVlNoncharitableAssetsYr4Amt>
+<DistributionYr4Rt>0.05000</DistributionYr4Rt>
+<AdjustedQlfyDistriYr5Amt>16316</AdjustedQlfyDistriYr5Amt>
+<NetVlNoncharitableAssetsYr5Amt>170000</NetVlNoncharitableAssetsYr5Amt>
+<DistributionYr5Rt>0.09598</DistributionYr5Rt>
+<TotalDistributionRt>0.31498</TotalDistributionRt>
+<AverageDistributionRt>0.06300</AverageDistributionRt>
+<NetVlNoncharitableAssetsAmt>226701</NetVlNoncharitableAssetsAmt>
+<AdjNetVlNoncharitableAssetsAmt>14281</AdjNetVlNoncharitableAssetsAmt>
+<NetInvestmentIncomePctAmt>172</NetInvestmentIncomePctAmt>
+<AdjNonchrtblNetInvstIncmPctAmt>14453</AdjNonchrtblNetInvstIncmPctAmt>
+<QualifyingDistributionsAmt>11525</QualifyingDistributionsAmt>
+</QlfyUndSect4940eReducedTaxGrp>
+<ExciseTaxBasedOnInvstIncmGrp>
+<InvestmentIncomeExciseTaxAmt>345</InvestmentIncomeExciseTaxAmt>
+<SubtotalAmt>345</SubtotalAmt>
+<TaxBasedOnInvestmentIncomeAmt>345</TaxBasedOnInvestmentIncomeAmt>
+<TaxDueAmt>345</TaxDueAmt>
+</ExciseTaxBasedOnInvstIncmGrp>
+<StatementsRegardingActyGrp>
+<LegislativePoliticalActyInd>false</LegislativePoliticalActyInd>
+<MoreThan100SpentInd>false</MoreThan100SpentInd>
+<Form1120POLFiledInd>false</Form1120POLFiledInd>
+<ActivitiesNotPreviouslyRptInd>false</ActivitiesNotPreviouslyRptInd>
+<ChangesToArticlesOrBylawsInd>false</ChangesToArticlesOrBylawsInd>
+<UnrelatedBusIncmOverLimitInd>false</UnrelatedBusIncmOverLimitInd>
+<Form990TFiledInd>false</Form990TFiledInd>
+<OrganizationDissolvedEtcInd>false</OrganizationDissolvedEtcInd>
+<Section508eRqrSatisfiedInd>true</Section508eRqrSatisfiedInd>
+<AtLeast5000InAssetsInd>true</AtLeast5000InAssetsInd>
+<Form990PFFiledWithAttyGenInd>true</Form990PFFiledWithAttyGenInd>
+<PrivateOperatingFoundationInd>false</PrivateOperatingFoundationInd>
+<NewSubstantialContributorsInd>false</NewSubstantialContributorsInd>
+<OwnControlledEntityInd>false</OwnControlledEntityInd>
+<DonorAdvisedFundInd>false</DonorAdvisedFundInd>
+<ComplyWithPublicInspRqrInd>true</ComplyWithPublicInspRqrInd>
+<WebsiteAddressTxt>N/A</WebsiteAddressTxt>
+<PersonsWithBooksName>
+<BusinessNameLine1Txt>H Alan Bell</BusinessNameLine1Txt>
+</PersonsWithBooksName>
+<PhoneNum>7855371673</PhoneNum>
+<LocationOfBooksUSAddress>
+<AddressLine1Txt>3015 Cherry Hill Road</AddressLine1Txt>
+<CityNm>Manhattan</CityNm>
+<StateAbbreviationCd>KS</StateAbbreviationCd>
+<ZIPCd>66503</ZIPCd>
+</LocationOfBooksUSAddress>
+<ForeignAccountsQuestionInd>false</ForeignAccountsQuestionInd>
+</StatementsRegardingActyGrp>
+<StatementsRegardingActy4720Grp>
+<SaleOrExchDisqualifiedPrsnInd>false</SaleOrExchDisqualifiedPrsnInd>
+<BrrwOrLendDisqualifiedPrsnInd>false</BrrwOrLendDisqualifiedPrsnInd>
+<FurnGoodsDisqualifiedPrsnInd>false</FurnGoodsDisqualifiedPrsnInd>
+<PayCompDisqualifiedPrsnInd>false</PayCompDisqualifiedPrsnInd>
+<TransferAstDisqualifiedPrsnInd>false</TransferAstDisqualifiedPrsnInd>
+<PaymentToGovernmentOfficialInd>false</PaymentToGovernmentOfficialInd>
+<ActsFailToQlfyAsExceptionsInd>false</ActsFailToQlfyAsExceptionsInd>
+<UncorrectedPriorActsInd>false</UncorrectedPriorActsInd>
+<UndistributedIncomePYInd>false</UndistributedIncomePYInd>
+<UndistrIncmSect4942a2NotAppInd>false</UndistrIncmSect4942a2NotAppInd>
+<BusinessHoldingsInd>false</BusinessHoldingsInd>
+<ExcessBusinessHoldingsInd>false</ExcessBusinessHoldingsInd>
+<JeopardyInvestmentsInd>false</JeopardyInvestmentsInd>
+<UncorrectedPYJeopardyInvstInd>false</UncorrectedPYJeopardyInvstInd>
+<InfluenceLegislationInd>false</InfluenceLegislationInd>
+<InfluenceElectionInd>false</InfluenceElectionInd>
+<GrantsToIndividualsInd>false</GrantsToIndividualsInd>
+<GrantsToOrganizationsInd>false</GrantsToOrganizationsInd>
+<NoncharitablePurposeInd>false</NoncharitablePurposeInd>
+<TransactionsFailToQlfyAsExcInd>false</TransactionsFailToQlfyAsExcInd>
+<MaintainedExpenditureRspnsInd>false</MaintainedExpenditureRspnsInd>
+<RcvFndsToPayPrsnlBnftCntrctInd>false</RcvFndsToPayPrsnlBnftCntrctInd>
+<PayPremiumsPrsnlBnftCntrctInd>false</PayPremiumsPrsnlBnftCntrctInd>
+<ProhibitedTaxShelterTransInd>false</ProhibitedTaxShelterTransInd>
+<ProceedsOrNetIncomeInd>false</ProceedsOrNetIncomeInd>
+</StatementsRegardingActy4720Grp>
+<OfficerDirTrstKeyEmplInfoGrp>
+<OfficerDirTrstKeyEmplGrp>
+<PersonNm>H Alan Bell</PersonNm>
+<USAddress>
+<AddressLine1Txt>940 Cape Marco Drive 505</AddressLine1Txt>
+<CityNm>Marco Island</CityNm>
+<StateAbbreviationCd>FL</StateAbbreviationCd>
+<ZIPCd>34145</ZIPCd>
+</USAddress>
+<TitleTxt>President</TitleTxt>
+<AverageHrsPerWkDevotedToPosRt>2.00</AverageHrsPerWkDevotedToPosRt>
+<CompensationAmt>0</CompensationAmt>
+</OfficerDirTrstKeyEmplGrp>
+<OfficerDirTrstKeyEmplGrp>
+<PersonNm>Karen K Bell</PersonNm>
+<USAddress>
+<AddressLine1Txt>940 Cape Marco Drive 505</AddressLine1Txt>
+<CityNm>Marco Island</CityNm>
+<StateAbbreviationCd>FL</StateAbbreviationCd>
+<ZIPCd>34145</ZIPCd>
+</USAddress>
+<TitleTxt>Sec/Treas</TitleTxt>
+<AverageHrsPerWkDevotedToPosRt>2.00</AverageHrsPerWkDevotedToPosRt>
+<CompensationAmt>0</CompensationAmt>
+</OfficerDirTrstKeyEmplGrp>
+<OfficerDirTrstKeyEmplGrp>
+<PersonNm>Anthony T Bell</PersonNm>
+<USAddress>
+<AddressLine1Txt>13010 Water Lane</AddressLine1Txt>
+<CityNm>Austin</CityNm>
+<StateAbbreviationCd>TX</StateAbbreviationCd>
+<ZIPCd>78732</ZIPCd>
+</USAddress>
+<TitleTxt>Director</TitleTxt>
+<AverageHrsPerWkDevotedToPosRt>1.00</AverageHrsPerWkDevotedToPosRt>
+<CompensationAmt>0</CompensationAmt>
+</OfficerDirTrstKeyEmplGrp>
+<OfficerDirTrstKeyEmplGrp>
+<PersonNm>Andrew A Bell</PersonNm>
+<USAddress>
+<AddressLine1Txt>7990 Anderson Avenue</AddressLine1Txt>
+<CityNm>Manhattan</CityNm>
+<StateAbbreviationCd>KS</StateAbbreviationCd>
+<ZIPCd>66503</ZIPCd>
+</USAddress>
+<TitleTxt>Director</TitleTxt>
+<AverageHrsPerWkDevotedToPosRt>1.00</AverageHrsPerWkDevotedToPosRt>
+<CompensationAmt>0</CompensationAmt>
+</OfficerDirTrstKeyEmplGrp>
+<CompOfHghstPdEmplOrNONETxt>NONE</CompOfHghstPdEmplOrNONETxt>
+<CompOfHghstPdCntrctOrNONETxt>NONE</CompOfHghstPdCntrctOrNONETxt>
+</OfficerDirTrstKeyEmplInfoGrp>
+<MinimumInvestmentReturnGrp>
+<AverageMonthlyFMVOfSecAmt>213662</AverageMonthlyFMVOfSecAmt>
+<AverageMonthlyCashBalancesAmt>16491</AverageMonthlyCashBalancesAmt>
+<FMVAllOtherNoncharitableAstAmt>0</FMVAllOtherNoncharitableAstAmt>
+<TotalFMVOfUnusedAssetsAmt>230153</TotalFMVOfUnusedAssetsAmt>
+<ReductionClaimedAmt>0</ReductionClaimedAmt>
+<AdjustedTotalFMVOfUnusedAstAmt>230153</AdjustedTotalFMVOfUnusedAstAmt>
+<CashDeemedCharitableAmt>3452</CashDeemedCharitableAmt>
+<NetVlNoncharitableAssetsAmt>226701</NetVlNoncharitableAssetsAmt>
+<MinimumInvestmentReturnAmt>11335</MinimumInvestmentReturnAmt>
+</MinimumInvestmentReturnGrp>
+<DistributableAmountGrp>
+<MinimumInvestmentReturnAmt>11335</MinimumInvestmentReturnAmt>
+<TaxBasedOnInvestmentIncomeAmt>345</TaxBasedOnInvestmentIncomeAmt>
+<TotalTaxAmt>345</TotalTaxAmt>
+<DistributableBeforeAdjAmt>10990</DistributableBeforeAdjAmt>
+<DistributableBeforeDedAmt>10990</DistributableBeforeDedAmt>
+<DistributableAsAdjustedAmt>10990</DistributableAsAdjustedAmt>
+</DistributableAmountGrp>
+<QualifyingDistriPartXIIGrp>
+<ExpensesAndContributionsAmt>11525</ExpensesAndContributionsAmt>
+<QualifyingDistributionsAmt>11525</QualifyingDistributionsAmt>
+<AdjustedQualifyingDistriAmt>11525</AdjustedQualifyingDistriAmt>
+</QualifyingDistriPartXIIGrp>
+<UndistributedIncomeGrp>
+<DistributableAsAdjustedAmt>10990</DistributableAsAdjustedAmt>
+<ExcessDistributionCyovYr5Amt>7816</ExcessDistributionCyovYr5Amt>
+<ExcessDistributionCyovYr3Amt>3585</ExcessDistributionCyovYr3Amt>
+<ExcessDistributionCyovYr2Amt>420</ExcessDistributionCyovYr2Amt>
+<TotalExcessDistributionCyovAmt>11821</TotalExcessDistributionCyovAmt>
+<QualifyingDistributionsAmt>11525</QualifyingDistributionsAmt>
+<TreatedAsDistriFromCorpusAmt>0</TreatedAsDistriFromCorpusAmt>
+<AppliedToCurrentYearAmt>10990</AppliedToCurrentYearAmt>
+<RemainingDistriFromCorpusAmt>535</RemainingDistriFromCorpusAmt>
+<TotalCorpusAmt>12356</TotalCorpusAmt>
+<UndistributedIncomeCYAmt>0</UndistributedIncomeCYAmt>
+<ExcessDistriCyovFromYr5Amt>7816</ExcessDistriCyovFromYr5Amt>
+<ExcessDistriCyovToNextYrAmt>4540</ExcessDistriCyovToNextYrAmt>
+<ExcessFromYear3Amt>3585</ExcessFromYear3Amt>
+<ExcessFromYear2Amt>420</ExcessFromYear2Amt>
+<ExcessFromCurrentYearAmt>535</ExcessFromCurrentYearAmt>
+</UndistributedIncomeGrp>
+<SupplementaryInformationGrp>
+<ContributingManagerNm>H Alan Bell</ContributingManagerNm>
+<OnlyContriToPreselectedInd>X</OnlyContriToPreselectedInd>
+<GrantOrContributionPdDurYrGrp>
+<RecipientBusinessName>
+<BusinessNameLine1Txt>First Presbyterian Church</BusinessNameLine1Txt>
+</RecipientBusinessName>
+<RecipientUSAddress>
+<AddressLine1Txt>801 Leavenworth</AddressLine1Txt>
+<CityNm>Manhattan</CityNm>
+<StateAbbreviationCd>KS</StateAbbreviationCd>
+<ZIPCd>66502</ZIPCd>
+</RecipientUSAddress>
+<RecipientRelationshipTxt>None</RecipientRelationshipTxt>
+<RecipientFoundationStatusTxt>501(c)(3)</RecipientFoundationStatusTxt>
+<GrantOrContributionPurposeTxt>Church Ministry</GrantOrContributionPurposeTxt>
+<Amt>6000</Amt>
+</GrantOrContributionPdDurYrGrp>
+<GrantOrContributionPdDurYrGrp>
+<RecipientBusinessName>
+<BusinessNameLine1Txt>Homecare & Hospice</BusinessNameLine1Txt>
+</RecipientBusinessName>
+<RecipientUSAddress>
+<AddressLine1Txt>323 Poyntz Avenue</AddressLine1Txt>
+<CityNm>Manhattan</CityNm>
+<StateAbbreviationCd>KS</StateAbbreviationCd>
+<ZIPCd>66502</ZIPCd>
+</RecipientUSAddress>
+<RecipientRelationshipTxt>None</RecipientRelationshipTxt>
+<RecipientFoundationStatusTxt>501(c)(3)</RecipientFoundationStatusTxt>
+<GrantOrContributionPurposeTxt>Hospice Ministry</GrantOrContributionPurposeTxt>
+<Amt>50</Amt>
+</GrantOrContributionPdDurYrGrp>
+<GrantOrContributionPdDurYrGrp>
+<RecipientPersonNm>Various Organized Charities</RecipientPersonNm>
+<RecipientUSAddress>
+<AddressLine1Txt>Various</AddressLine1Txt>
+<CityNm>Manhattan</CityNm>
+<StateAbbreviationCd>KS</StateAbbreviationCd>
+<ZIPCd>66503</ZIPCd>
+</RecipientUSAddress>
+<RecipientRelationshipTxt>None</RecipientRelationshipTxt>
+<RecipientFoundationStatusTxt>501(c)(3)</RecipientFoundationStatusTxt>
+<GrantOrContributionPurposeTxt>Education and Civic</GrantOrContributionPurposeTxt>
+<Amt>1425</Amt>
+</GrantOrContributionPdDurYrGrp>
+<GrantOrContributionPdDurYrGrp>
+<RecipientBusinessName>
+<BusinessNameLine1Txt>Manhattan Library Foundation</BusinessNameLine1Txt>
+</RecipientBusinessName>
+<RecipientUSAddress>
+<AddressLine1Txt>629 Poyntz Avenue</AddressLine1Txt>
+<CityNm>Manhattan</CityNm>
+<StateAbbreviationCd>KS</StateAbbreviationCd>
+<ZIPCd>66502</ZIPCd>
+</RecipientUSAddress>
+<RecipientRelationshipTxt>None</RecipientRelationshipTxt>
+<RecipientFoundationStatusTxt>501(c)(3)</RecipientFoundationStatusTxt>
+<GrantOrContributionPurposeTxt>Education</GrantOrContributionPurposeTxt>
+<Amt>1000</Amt>
+</GrantOrContributionPdDurYrGrp>
+<GrantOrContributionPdDurYrGrp>
+<RecipientBusinessName>
+<BusinessNameLine1Txt>Flint Hills Breadbasket Community</BusinessNameLine1Txt>
+</RecipientBusinessName>
+<RecipientUSAddress>
+<AddressLine1Txt>905 Yuma</AddressLine1Txt>
+<CityNm>Manhattan</CityNm>
+<StateAbbreviationCd>KS</StateAbbreviationCd>
+<ZIPCd>66502</ZIPCd>
+</RecipientUSAddress>
+<RecipientRelationshipTxt>None</RecipientRelationshipTxt>
+<RecipientFoundationStatusTxt>501(c)(3)</RecipientFoundationStatusTxt>
+<GrantOrContributionPurposeTxt>Food Bank</GrantOrContributionPurposeTxt>
+<Amt>1000</Amt>
+</GrantOrContributionPdDurYrGrp>
+<GrantOrContributionPdDurYrGrp>
+<RecipientBusinessName>
+<BusinessNameLine1Txt>Sunset Zoological Park</BusinessNameLine1Txt>
+</RecipientBusinessName>
+<RecipientUSAddress>
+<AddressLine1Txt>2333 Oak Street</AddressLine1Txt>
+<CityNm>Manhattan</CityNm>
+<StateAbbreviationCd>KS</StateAbbreviationCd>
+<ZIPCd>66502</ZIPCd>
+</RecipientUSAddress>
+<RecipientRelationshipTxt>None</RecipientRelationshipTxt>
+<RecipientFoundationStatusTxt>501(c)(3)</RecipientFoundationStatusTxt>
+<GrantOrContributionPurposeTxt>Education</GrantOrContributionPurposeTxt>
+<Amt>100</Amt>
+</GrantOrContributionPdDurYrGrp>
+<GrantOrContributionPdDurYrGrp>
+<RecipientBusinessName>
+<BusinessNameLine1Txt>KSU Foundation</BusinessNameLine1Txt>
+</RecipientBusinessName>
+<RecipientUSAddress>
+<AddressLine1Txt>2323 Anderson Avenue Suite 500</AddressLine1Txt>
+<CityNm>Manhattan</CityNm>
+<StateAbbreviationCd>KS</StateAbbreviationCd>
+<ZIPCd>66502</ZIPCd>
+</RecipientUSAddress>
+<RecipientRelationshipTxt>None</RecipientRelationshipTxt>
+<RecipientFoundationStatusTxt>501(c)(3)</RecipientFoundationStatusTxt>
+<GrantOrContributionPurposeTxt>Education</GrantOrContributionPurposeTxt>
+<Amt>500</Amt>
+</GrantOrContributionPdDurYrGrp>
+<GrantOrContributionPdDurYrGrp>
+<RecipientBusinessName>
+<BusinessNameLine1Txt>Joy of Giving</BusinessNameLine1Txt>
+</RecipientBusinessName>
+<RecipientUSAddress>
+<AddressLine1Txt>317 Nassau Court</AddressLine1Txt>
+<CityNm>Marco Island</CityNm>
+<StateAbbreviationCd>FL</StateAbbreviationCd>
+<ZIPCd>34145</ZIPCd>
+</RecipientUSAddress>
+<RecipientRelationshipTxt>None</RecipientRelationshipTxt>
+<RecipientFoundationStatusTxt>501(c)(3)</RecipientFoundationStatusTxt>
+<GrantOrContributionPurposeTxt>Donation</GrantOrContributionPurposeTxt>
+<Amt>200</Amt>
+</GrantOrContributionPdDurYrGrp>
+<GrantOrContributionPdDurYrGrp>
+<RecipientBusinessName>
+<BusinessNameLine1Txt>St Matthews House</BusinessNameLine1Txt>
+</RecipientBusinessName>
+<RecipientUSAddress>
+<AddressLine1Txt>2001 Airport Pulling Rd</AddressLine1Txt>
+<CityNm>Naples</CityNm>
+<StateAbbreviationCd>FL</StateAbbreviationCd>
+<ZIPCd>34112</ZIPCd>
+</RecipientUSAddress>
+<RecipientRelationshipTxt>None</RecipientRelationshipTxt>
+<RecipientFoundationStatusTxt>501(c)(3)</RecipientFoundationStatusTxt>
+<GrantOrContributionPurposeTxt>Homeless Shelter</GrantOrContributionPurposeTxt>
+<Amt>50</Amt>
+</GrantOrContributionPdDurYrGrp>
+<GrantOrContributionPdDurYrGrp>
+<RecipientBusinessName>
+<BusinessNameLine1Txt>Ekklesia Ministries</BusinessNameLine1Txt>
+</RecipientBusinessName>
+<RecipientUSAddress>
+<AddressLine1Txt>3007 Hatch Blvd</AddressLine1Txt>
+<CityNm>Sheffield</CityNm>
+<StateAbbreviationCd>AL</StateAbbreviationCd>
+<ZIPCd>35660</ZIPCd>
+</RecipientUSAddress>
+<RecipientRelationshipTxt>None</RecipientRelationshipTxt>
+<RecipientFoundationStatusTxt>501(c)(3)</RecipientFoundationStatusTxt>
+<GrantOrContributionPurposeTxt>Church Ministry</GrantOrContributionPurposeTxt>
+<Amt>1000</Amt>
+</GrantOrContributionPdDurYrGrp>
+<GrantOrContributionPdDurYrGrp>
+<RecipientBusinessName>
+<BusinessNameLine1Txt>Wounded Warrior Project</BusinessNameLine1Txt>
+</RecipientBusinessName>
+<RecipientUSAddress>
+<AddressLine1Txt>3303 Valleywood Drive</AddressLine1Txt>
+<CityNm>Manhattan</CityNm>
+<StateAbbreviationCd>KS</StateAbbreviationCd>
+<ZIPCd>66502</ZIPCd>
+</RecipientUSAddress>
+<RecipientRelationshipTxt>None</RecipientRelationshipTxt>
+<RecipientFoundationStatusTxt>501(c)(3)</RecipientFoundationStatusTxt>
+<GrantOrContributionPurposeTxt>Donation</GrantOrContributionPurposeTxt>
+<Amt>200</Amt>
+</GrantOrContributionPdDurYrGrp>
+<TotalGrantOrContriPdDurYrAmt>11525</TotalGrantOrContriPdDurYrAmt>
+</SupplementaryInformationGrp>
+<AnalysisIncomeProducingActyGrp>
+<IntOnSavAndTempCashInvstGrp>
+<ExclusionCd>14</ExclusionCd>
+<ExclusionAmt>2</ExclusionAmt>
+</IntOnSavAndTempCashInvstGrp>
+<DivAndIntFromSecPartVIIGrp>
+<ExclusionCd>14</ExclusionCd>
+<ExclusionAmt>4677</ExclusionAmt>
+</DivAndIntFromSecPartVIIGrp>
+<GainSalesAstOthThanInvntryGrp>
+<UnrelatedBusinessTaxblIncmAmt>13</UnrelatedBusinessTaxblIncmAmt>
+<RelatedOrExemptFunctionIncmAmt>15049</RelatedOrExemptFunctionIncmAmt>
+</GainSalesAstOthThanInvntryGrp>
+<SubtotalsIncmProducingActyGrp>
+<UnrelatedBusinessTaxblIncmAmt>13</UnrelatedBusinessTaxblIncmAmt>
+<ExclusionAmt>4679</ExclusionAmt>
+<RelatedOrExemptFunctionIncmAmt>15049</RelatedOrExemptFunctionIncmAmt>
+</SubtotalsIncmProducingActyGrp>
+<TotalIncomeProducingActyAmt>19741</TotalIncomeProducingActyAmt>
+</AnalysisIncomeProducingActyGrp>
+<TrnsfrTransRlnNonchrtblEOGrp>
+<TrnsfrOfCashToNonchrtblEOInd>false</TrnsfrOfCashToNonchrtblEOInd>
+<TrnsfrOtherAssetNonchrtblEOInd>false</TrnsfrOtherAssetNonchrtblEOInd>
+<SalesOrExchangesOfAssetsInd>false</SalesOrExchangesOfAssetsInd>
+<PurchaseOfAssetsNonchrtblEOInd>false</PurchaseOfAssetsNonchrtblEOInd>
+<RentalOfFacilitiesOthAssetsInd>false</RentalOfFacilitiesOthAssetsInd>
+<ReimbursementArrangementsInd>false</ReimbursementArrangementsInd>
+<LoansOrLoanGuaranteesInd>false</LoansOrLoanGuaranteesInd>
+<PerformanceOfServicesEtcInd>false</PerformanceOfServicesEtcInd>
+<SharingOfFacilitiesEtcInd>false</SharingOfFacilitiesEtcInd>
+<RelationshipsNonchrtblEOInd>false</RelationshipsNonchrtblEOInd>
+</TrnsfrTransRlnNonchrtblEOGrp>
+</IRS990PF>
+<AccountingFeesSchedule documentId="AccountingFeesSchedule" softwareId="14000265" softwareVersionNum="2014v5.0">
+<AccountingFeesDetail>
+<CategoryTxt>Accounting Fees</CategoryTxt>
+<Amt>450</Amt>
+<NetInvestmentIncomeAmt>450</NetInvestmentIncomeAmt>
+<AdjustedNetIncomeAmt>0</AdjustedNetIncomeAmt>
+<DisbursementsCharitablePrpsAmt>0</DisbursementsCharitablePrpsAmt>
+</AccountingFeesDetail>
+</AccountingFeesSchedule>
+<InvestmentsCorpStockSchedule documentId="InvestmentsCorpStockSchedule" softwareId="14000265" softwareVersionNum="2014v5.0">
+<InvestmentsCorporateStockGrp>
+<StockNm>Wells Fargo Advisors</StockNm>
+<EOYBookValueAmt>154814</EOYBookValueAmt>
+<EOYFMVAmt>205747</EOYFMVAmt>
+</InvestmentsCorporateStockGrp>
+</InvestmentsCorpStockSchedule>
+<OtherIncreasesSchedule documentId="OtherIncreasesSchedule" softwareId="14000265" softwareVersionNum="2014v5.0">
+<OtherIncreasesDetail>
+<Desc>Nondividend Distributions</Desc>
+<Amt>246</Amt>
+</OtherIncreasesDetail>
+</OtherIncreasesSchedule>
+<OtherProfessionalFeesSchedule documentId="OtherProfessionalFeesSchedule" softwareId="14000265" softwareVersionNum="2014v5.0">
+<OtherProfessionalFeesDetail>
+<CategoryTxt>Advisory Fees</CategoryTxt>
+<Amt>1939</Amt>
+<NetInvestmentIncomeAmt>1939</NetInvestmentIncomeAmt>
+<AdjustedNetIncomeAmt>0</AdjustedNetIncomeAmt>
+<DisbursementsCharitablePrpsAmt>0</DisbursementsCharitablePrpsAmt>
+</OtherProfessionalFeesDetail>
+</OtherProfessionalFeesSchedule>
+<TaxesSchedule documentId="TaxesSchedule" softwareId="14000265" softwareVersionNum="2014v5.0">
+<TaxesDetail>
+<CategoryTxt>Foreign Income Tax Paid</CategoryTxt>
+<Amt>72</Amt>
+<NetInvestmentIncomeAmt>72</NetInvestmentIncomeAmt>
+</TaxesDetail>
+<TaxesDetail>
+<CategoryTxt>Kansas Secretary of State</CategoryTxt>
+<Amt>40</Amt>
+<NetInvestmentIncomeAmt>40</NetInvestmentIncomeAmt>
+</TaxesDetail>
+<TaxesDetail>
+<CategoryTxt>U.S. Income Tax</CategoryTxt>
+<Amt>441</Amt>
+<AdjustedNetIncomeAmt>441</AdjustedNetIncomeAmt>
+</TaxesDetail>
+</TaxesSchedule>
+</ReturnData>
+</Return>
