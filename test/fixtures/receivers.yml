@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  award: one
+  ein: 1
+  name: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+
+two:
+  award: two
+  ein: 1
+  name: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: 1

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_30_212223) do
+ActiveRecord::Schema.define(version: 2021_11_03_163119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,5 +35,19 @@ ActiveRecord::Schema.define(version: 2021_10_30_212223) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "receivers", force: :cascade do |t|
+    t.bigint "award_id", null: false
+    t.integer "ein"
+    t.string "name"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.integer "zip"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["award_id"], name: "index_receivers_on_award_id"
+  end
+
   add_foreign_key "awards", "filers"
+  add_foreign_key "receivers", "awards"
 end

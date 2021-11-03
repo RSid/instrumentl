@@ -4,8 +4,8 @@ class FilingParserController < ApplicationController
         doc = File.open(file) { |f| Nokogiri::XML(f) }
 
         filer = parse_filer(doc)
-        award = parse_award(doc)
-        render json: {filer: filer, award: award}
+        awards = parse_award(doc)
+        render json: awards.to_json(include: :receiver)
     end
 
     private
@@ -40,13 +40,29 @@ class FilingParserController < ApplicationController
                     next
                 end
                 award = Award.new(purpose: parsed_grant_purpose, cash_amount: parsed_cash_amount)
-                awards << award
 
+                parsed_recipient_ein = recipient_award_element.element_children.at('EINOfRecipient')&.text
                 parsed_recipient_name = recipient_award_element.element_children.at('RecipientNameBusiness/BusinessNameLine1').text
                 parsed_recipient_address = recipient_award_element.element_children.at('AddressUS/AddressLine1').text
                 parsed_recipient_city = recipient_award_element.element_children.at('AddressUS/City').text
                 parsed_recipient_state = recipient_award_element.element_children.at('AddressUS/State').text
                 parsed_recipient_zip = recipient_award_element.element_children.at('AddressUS/ZIPCode').text
+
+                receiver = Receiver.new(ein: parsed_recipient_ein, 
+                    name: parsed_recipient_name, 
+                    address: parsed_recipient_address, 
+                    city: parsed_recipient_city, 
+                    state: parsed_recipient_state, 
+                    zip: parsed_recipient_zip)
+                
+                award.build_receiver(ein: parsed_recipient_ein, 
+                    name: parsed_recipient_name, 
+                    address: parsed_recipient_address, 
+                    city: parsed_recipient_city, 
+                    state: parsed_recipient_state, 
+                    zip: parsed_recipient_zip)
+                
+                awards << award
             end
         end
         
