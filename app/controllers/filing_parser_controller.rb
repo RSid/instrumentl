@@ -1,12 +1,26 @@
 class FilingParserController < ApplicationController
     def index
-        file = File.join(Rails.root, 'app', '201401839349300020_public.xml')
-        doc = File.open(file) { |f| Nokogiri::XML(f) }
-    
-        filer = parse__and_create_filer(doc)
+        file_list = ['app/201132069349300318_public.xml',
+                'app/201401839349300020_public.xml',
+                'app/201521819349301247_public.xml',
+                'app/201522139349100402_public.xml',
+                'app/201612429349300846_public.xml',
+                'app/201641949349301259_public.xml',
+                'app/201823309349300127_public.xml',
+                'app/201831309349303578_public.xml',
+                'app/201831359349101003_public.xml',
+                'app/201921719349301032_public.xml']
+
+        for f in file_list do 
+            file = File.join(Rails.root, f)
+            doc = File.open(file) { |f| Nokogiri::XML(f) }
         
-        awards = parse_and_create_awards(filer.id, doc)
-        render json: {filer: filer, awards: awards.to_json(include: :receiver)}
+            filer = parse__and_create_filer(doc)
+            
+            awards = parse_and_create_awards(filer.id, doc)
+            #render json: {filer: filer, awards: awards.to_json(include: :receiver)}
+        end
+        render json: {ok: 200}
     end
 
     private
@@ -62,22 +76,37 @@ class FilingParserController < ApplicationController
 
     def parse_and_create_awards(filer_id, xml_doc)
         awards = []
-        for recipient_award_element in xml_doc.at('Return/ReturnData/IRS990ScheduleI').element_children do
+        if xml_doc.at('Return/ReturnData/IRS990ScheduleI').nil?
+            award_and_recipient_list = xml_doc.at('Return/ReturnData/IRS990PF/SupplementaryInformationGrp').element_children
+        else
+            award_and_recipient_list = xml_doc.at('Return/ReturnData/IRS990ScheduleI').element_children
+        end
+        for recipient_award_element in award_and_recipient_list do
             #skipping the RecordsMaintained element, and any others that don't have more data
             if recipient_award_element.element_children.length > 0
+                #debugger
                 if recipient_award_element.element_children.at('PurposeOfGrant').nil?
                     if recipient_award_element.element_children.at('PurposeOfGrantTxt').nil?
-                        #depends on shape of other files whether we can skip these or need better parsing
-                        puts recipient_award_element.element_children
-                        next
+                        if recipient_award_element.element_children.at('GrantOrContributionPurposeTxt').nil?
+                            #depends on shape of other files whether we can skip these or need better parsing
+                            puts recipient_award_element.element_children
+                            next
+                        else
+                            parsed_grant_purpose = recipient_award_element.element_children.at('GrantOrContributionPurposeTxt')
+                        end
+                    else
+                        parsed_grant_purpose = recipient_award_element.element_children.at('PurposeOfGrantTxt').text
                     end
-                    parsed_grant_purpose = recipient_award_element.element_children.at('PurposeOfGrantTxt').text
                 else
                     parsed_grant_purpose = recipient_award_element.element_children.at('PurposeOfGrant').text
                 end
                 
                 if recipient_award_element.element_children.at('AmountOfCashGrant').nil?
-                    parsed_cash_amount = recipient_award_element.element_children.at('CashGrantAmt').text
+                    if recipient_award_element.element_children.at('CashGrantAmt').nil?
+                        parsed_cash_amount = recipient_award_element.element_children.at('Amt').text
+                    else
+                        parsed_cash_amount = recipient_award_element.element_children.at('CashGrantAmt').text
+                    end
                 else
                     parsed_cash_amount = recipient_award_element.element_children.at('AmountOfCashGrant').text
                 end
@@ -109,7 +138,11 @@ class FilingParserController < ApplicationController
 
                 if recipient_award_element.element_children.at('AddressUS/AddressLine1').nil?
                     if recipient_award_element.element_children.at('USAddress/AddressLine1Txt').nil?
-                        parsed_recipient_address = recipient_award_element.element_children.at('USAddress/AddressLine1').text
+                        if recipient_award_element.element_children.at('USAddress/AddressLine1').nil?
+                            parsed_recipient_address = recipient_award_element.element_children.at('RecipientUSAddress/AddressLine1Txt').text
+                        else
+                            parsed_recipient_address = recipient_award_element.element_children.at('USAddress/AddressLine1').text
+                        end
                     else
                         parsed_recipient_address = recipient_award_element.element_children.at('USAddress/AddressLine1Txt').text
                     end
@@ -119,7 +152,11 @@ class FilingParserController < ApplicationController
 
                 if recipient_award_element.element_children.at('AddressUS/City').nil?
                     if recipient_award_element.element_children.at('USAddress/CityNm').nil?
-                        parsed_recipient_city = recipient_award_element.element_children.at('USAddress/City').text
+                        if parsed_recipient_city = recipient_award_element.element_children.at('USAddress/City').nil?
+                            parsed_recipient_city = recipient_award_element.element_children.at('RecipientUSAddress/CityNm').text
+                        else
+                            parsed_recipient_city = recipient_award_element.element_children.at('USAddress/City').text
+                        end
                     else
                         parsed_recipient_city = recipient_award_element.element_children.at('USAddress/CityNm').text
                     end
@@ -129,7 +166,11 @@ class FilingParserController < ApplicationController
 
                 if recipient_award_element.element_children.at('AddressUS/State').nil?
                     if recipient_award_element.element_children.at('USAddress/StateAbbreviationCd').nil?
-                        parsed_recipient_state = recipient_award_element.element_children.at('USAddress/State').text
+                        if recipient_award_element.element_children.at('USAddress/State').nil?
+                            parsed_recipient_state = recipient_award_element.element_children.at('RecipientUSAddress/StateAbbreviationCd').text
+                        else
+                            parsed_recipient_state = recipient_award_element.element_children.at('USAddress/State').text
+                        end
                     else
                         parsed_recipient_state = recipient_award_element.element_children.at('USAddress/StateAbbreviationCd').text
                     end
@@ -139,7 +180,11 @@ class FilingParserController < ApplicationController
 
                 if recipient_award_element.element_children.at('AddressUS/ZIPCode').nil?
                     if recipient_award_element.element_children.at('USAddress/ZIPCd').nil?
-                        parsed_recipient_zip = recipient_award_element.element_children.at('USAddress/ZIPCode').text
+                        if recipient_award_element.element_children.at('USAddress/ZIPCode').nil?
+                            parsed_recipient_zip = recipient_award_element.element_children.at('RecipientUSAddress/ZIPCd').text
+                        else
+                            parsed_recipient_zip = recipient_award_element.element_children.at('USAddress/ZIPCode').text
+                        end
                     else
                         parsed_recipient_zip = recipient_award_element.element_children.at('USAddress/ZIPCd').text
                     end
