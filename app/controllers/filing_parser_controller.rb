@@ -1,6 +1,6 @@
 class FilingParserController < ApplicationController
     def index
-        file = File.join(Rails.root, 'app', 'example2.xml')
+        file = File.join(Rails.root, 'app', '201401839349300020_public.xml')
         doc = File.open(file) { |f| Nokogiri::XML(f) }
     
         filer = parse__and_create_filer(doc)
@@ -15,7 +15,12 @@ class FilingParserController < ApplicationController
         parsed_ein = xml_doc.at('Return/ReturnHeader/Filer/EIN').text
 
         if xml_doc.at('Return/ReturnHeader/Filer/Name').nil?
-            parsed_name = xml_doc.at('Return/ReturnHeader/Filer/BusinessName/BusinessNameLine1Txt').text
+            #cyclomatic complexity boo
+            if xml_doc.at('Return/ReturnHeader/Filer/BusinessName/BusinessNameLine1Txt').nil?
+                parsed_name = xml_doc.at('Return/ReturnHeader/Filer/BusinessName/BusinessNameLine1').text
+            else
+                parsed_name = xml_doc.at('Return/ReturnHeader/Filer/BusinessName/BusinessNameLine1Txt').text
+            end
         else
             parsed_name = xml_doc.at('Return/ReturnHeader/Filer/Name/BusinessNameLine1').text
         end
@@ -92,31 +97,52 @@ class FilingParserController < ApplicationController
                 end
 
                 if recipient_award_element.element_children.at('RecipientNameBusiness/BusinessNameLine1').nil?
-                    parsed_name = xml_doc.at('RecipientBusinessName/BusinessNameLine1Txt').text
+                    #cyclomatic complexity boo
+                    if xml_doc.at('RecipientBusinessName/BusinessNameLine1Txt').nil?
+                        parsed_name = xml_doc.at('RecipientBusinessName/BusinessNameLine1').text
+                    else
+                        parsed_name = xml_doc.at('RecipientBusinessName/BusinessNameLine1Txt').text
+                    end
                 else
                     parsed_recipient_name = recipient_award_element.element_children.at('RecipientNameBusiness/BusinessNameLine1').text
                 end
 
                 if recipient_award_element.element_children.at('AddressUS/AddressLine1').nil?
-                    parsed_recipient_address = recipient_award_element.element_children.at('USAddress/AddressLine1Txt').text
+                    if recipient_award_element.element_children.at('USAddress/AddressLine1Txt').nil?
+                        parsed_recipient_address = recipient_award_element.element_children.at('USAddress/AddressLine1').text
+                    else
+                        parsed_recipient_address = recipient_award_element.element_children.at('USAddress/AddressLine1Txt').text
+                    end
                 else
                     parsed_recipient_address = recipient_award_element.element_children.at('AddressUS/AddressLine1').text
                 end
 
                 if recipient_award_element.element_children.at('AddressUS/City').nil?
-                    parsed_recipient_city = recipient_award_element.element_children.at('USAddress/CityNm').text
+                    if recipient_award_element.element_children.at('USAddress/CityNm').nil?
+                        parsed_recipient_city = recipient_award_element.element_children.at('USAddress/City').text
+                    else
+                        parsed_recipient_city = recipient_award_element.element_children.at('USAddress/CityNm').text
+                    end
                 else
                     parsed_recipient_city = recipient_award_element.element_children.at('AddressUS/City').text
                 end
 
                 if recipient_award_element.element_children.at('AddressUS/State').nil?
-                    parsed_recipient_state = recipient_award_element.element_children.at('USAddress/StateAbbreviationCd').text
+                    if recipient_award_element.element_children.at('USAddress/StateAbbreviationCd').nil?
+                        parsed_recipient_state = recipient_award_element.element_children.at('USAddress/State').text
+                    else
+                        parsed_recipient_state = recipient_award_element.element_children.at('USAddress/StateAbbreviationCd').text
+                    end
                 else
                     parsed_recipient_state = recipient_award_element.element_children.at('AddressUS/State').text
                 end
 
                 if recipient_award_element.element_children.at('AddressUS/ZIPCode').nil?
-                    parsed_recipient_zip = recipient_award_element.element_children.at('USAddress/ZIPCd').text
+                    if recipient_award_element.element_children.at('USAddress/ZIPCd').nil?
+                        parsed_recipient_zip = recipient_award_element.element_children.at('USAddress/ZIPCode').text
+                    else
+                        parsed_recipient_zip = recipient_award_element.element_children.at('USAddress/ZIPCd').text
+                    end
                 else
                     parsed_recipient_zip = recipient_award_element.element_children.at('AddressUS/ZIPCode').text
                 end
