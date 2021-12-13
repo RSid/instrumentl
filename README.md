@@ -1,8 +1,8 @@
 # README
 
-Ruby 3.0.2
+Install Ruby 3.0.2 with a version manger, and run bundle install to install dependencies.
 
-Postgres
+Make sure you have Postgres installed as well.
 
 Run: `rails s`
 Debug: `rdbg bin/rails s`
